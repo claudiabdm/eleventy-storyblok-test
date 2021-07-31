@@ -1,0 +1,6 @@
+<ul>
+  {{blok.component | dump }}
+{%- for project in blok.body -%}
+  <li>{{ project }}</li>
+{%- endfor -%}
+</ul>

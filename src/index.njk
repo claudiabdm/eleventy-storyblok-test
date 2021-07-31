@@ -1,0 +1,10 @@
+---
+layout: base.njk
+pagination:  
+  data: storyblok.stories
+  alias: story
+  size: 1
+permalink: "{{ story.permalink }}/index.html"
+---
+
+{{ content | safe }}

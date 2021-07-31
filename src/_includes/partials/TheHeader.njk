@@ -1,0 +1,32 @@
+<header class="header">
+  <nav ref="nav" class="header__nav">
+    {% for link in storyblok.navLinks[story.lang] %}
+      <div class="header__link-wrapper">
+        <a class="header__link link" href="{{ link.link }}">
+          <div class="link__icon-wrapper">
+            <svg class="link__icon">
+              <use href="/assets/sprite.svg#{{ link.icon }}"/>
+            </svg>
+          </div>
+          <span class="link__text">{{ link.text }}</span>
+        </a>
+      </div>
+    {% endfor %}
+  </nav>
+  <div class="header__settings">
+    <div class="header__lang">
+      <a class="header__link link" href="/">
+        en
+      </a>
+      {% for lang, prop in storyblok.navLinks %}
+        {% if lang !== 'en' %}
+          <span aria-hidden="true" class="header__separator">|</span>
+          <a class="header__link link" href="/{{ lang }}">
+            {{ lang }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <MyButtonDarkMode/>
+  </div>
+</header>

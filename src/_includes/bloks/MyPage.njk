@@ -1,0 +1,12 @@
+<section ref="page" v-editable="blok" class="page">
+  <h1 class="page__title">
+    {{ blok.title }}<span class="dot">.</span>
+  </h1>
+  <div class="page__group">
+    {% for blok in blok.body %}
+      {% include "bloks/"+ blok.component + ".njk" %}
+    {% endfor %}
+  </div>
+  {# <SvgPoints class="page__points" />
+            <SvgCorner class="page__corner" /> #}
+</section>

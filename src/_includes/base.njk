@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ story.data.seo.description | escape  }}">
+    <meta property="og:title" content="{{ story.data.seo.title | escape }}">
+    <meta property="og:description" content="{{ story.data.seo.description | escape }}">
+    <meta property="twitter:title" content="{{ story.data.seo.title | escape }}">
+    <meta property="twitter:description" content="{{ story.data.seo.description | escape }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>{{ story.data.seo.title }}</title>
+  </head>
+  <body>
+    {% include "partials/TheHeader.njk" %}
+    <main>
+    {% for blok in story.content.body %}
+      {% include "bloks/"+ blok.component + ".njk" %}
+    {% endfor %}
+    </main>
+  </body>
+</html>
